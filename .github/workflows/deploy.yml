@@ -11,14 +11,22 @@ jobs:
               run: npm ci
             - name: Build project
               run: npm run build --prod
-
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                  name: dist-files
+                  path: dist
     firebase-deploy:
         name: Deploy
         needs: build
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@master
-            - uses: w9jds/firebase-action@master
+            - name: Get build artifacts
+              uses: actions/download-artifact@v3
+              with:
+                  name: dist-files
+            - name: deploy to firebase hosting
+              uses: w9jds/firebase-action@master
               with:
                   args: deploy --only hosting
               env:
