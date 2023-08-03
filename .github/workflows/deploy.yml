@@ -2,7 +2,7 @@ name: Deploy
 on: workflow_dispatch
 jobs:
     build:
-        name: Build
+        name: Build & deploy
         runs-on: ubuntu-latest
         steps:
             - name: Get code
@@ -11,7 +11,7 @@ jobs:
               run: npm ci
             - name: Build project
               run: npm run build --prod
-            - name: deploy to firebase hosting
+            - name: Deploy to firebase hosting
               uses: w9jds/firebase-action@master
               with:
                   args: deploy --only hosting
