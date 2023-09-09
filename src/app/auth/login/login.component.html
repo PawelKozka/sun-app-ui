@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="auth-container">
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput type="text" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" />
+    </mat-form-field>
+    <div class="button-container">
+        <button mat-raised-button color="primary" (click)="login()">
+            Login
+        </button>
+        <button mat-raised-button color="primary" (click)="loginWithGoogle()">
+            Login with google
+        </button>
+        <button mat-raised-button color="primary" (click)="register()">
+            Register
+        </button>
+    </div>
+</div>

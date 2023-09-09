@@ -1,1 +1,37 @@
-<p>register works!</p>
+<div class="auth-container">
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Second Name</mat-label>
+        <input matInput type="text" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput type="text" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="number" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Repeat password</mat-label>
+        <input matInput type="password" />
+    </mat-form-field>
+    <div class="button-container">
+        <button mat-raised-button color="primary" (click)="register()">
+            Register
+        </button>
+        <button mat-raised-button color="primary" (click)="loginWithGoogle()">
+            Login with google
+        </button>
+        <button mat-raised-button color="primary" (click)="login()">
+            Go to login
+        </button>
+    </div>
+</div>
