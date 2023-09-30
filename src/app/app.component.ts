@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { ScreenResolutionService } from './shared/services/screen-resolution.service';
 
 @Component({
     selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'sun-app-ui';
+    constructor(private screenResolutionService: ScreenResolutionService) {}
+
+    @HostListener('window:resize', [])
+    onWindowResize() {
+        this.screenResolutionService.onWindowResize();
+    }
 }
