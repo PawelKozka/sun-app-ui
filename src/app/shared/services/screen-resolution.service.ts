@@ -5,9 +5,8 @@ import { BehaviorSubject } from 'rxjs';
     providedIn: 'root',
 })
 export class ScreenResolutionService {
-    private currentResolutionTypeSubject = new BehaviorSubject(
-        ScreenResolution.MOBILE
-    );
+    private currentResolutionTypeSubject =
+        new BehaviorSubject<ScreenResolution>(ScreenResolution.MOBILE);
     public currentResolutionType$ =
         this.currentResolutionTypeSubject.asObservable();
     constructor() {

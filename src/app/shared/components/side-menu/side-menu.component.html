@@ -1,2 +1,6 @@
 <app-side-menu-main></app-side-menu-main>
-<div (click)="close()" class="blurred"></div>
+<div
+    *ngIf="isMobileViewAndOpenedSidePanel$ | async"
+    (click)="close()"
+    class="blurred"
+></div>
