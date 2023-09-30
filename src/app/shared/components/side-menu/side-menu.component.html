@@ -1,2 +1,13 @@
-<app-side-menu-main></app-side-menu-main>
-<div (click)="close()" class="blurred"></div>
+<div
+    class="wrapper"
+    [ngClass]="{
+        mobile: isMobileViewAndOpenedSidePanel$ | async
+    }"
+>
+    <app-side-menu-main></app-side-menu-main>
+    <div
+        *ngIf="isMobileViewAndOpenedSidePanel$ | async"
+        (click)="close()"
+        class="blurred"
+    ></div>
+</div>
