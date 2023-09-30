@@ -1,10 +1,10 @@
-import { Component, inject } from '@angular/core';
-import { SidePanelService } from './side-panel.service';
+import {Component, inject} from '@angular/core';
+import {SidePanelService} from './side-panel.service';
 import {
     ScreenResolution,
     ScreenResolutionService,
 } from '../../services/screen-resolution.service';
-import { combineLatest, map, Observable } from 'rxjs';
+import {combineLatest, map, Observable} from 'rxjs';
 
 @Component({
     selector: 'app-side-menu',
@@ -16,19 +16,17 @@ export class SideMenuComponent {
     private screenResolutionService: ScreenResolutionService = inject(
         ScreenResolutionService
     );
+
     get isMobileViewAndOpenedSidePanel$(): Observable<boolean> {
         return combineLatest([
             this.screenResolutionService.currentResolutionType$,
             this.sidePanelService.isOpen$,
         ]).pipe(
-            map(([resolution, isOpen]) => {
-                return resolution === ScreenResolution.MOBILE && isOpen;
-            })
+            map(([resolution, isOpen]) => resolution === ScreenResolution.MOBILE && isOpen)
         );
     }
+
     close() {
         this.sidePanelService.close();
     }
-
-    protected readonly ScreenResolution = ScreenResolution;
 }

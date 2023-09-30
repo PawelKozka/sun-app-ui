@@ -1,15 +1,18 @@
-:host {
+.wrapper {
     height: 100vh;
+    display: flex;
+}
+.blurred {
+    flex: 1;
+    background-color: #0009;
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+}
+
+.mobile {
     width: 100vw;
     position: fixed;
     left: 0;
     top: 0;
-    display: flex;
-    .blurred {
-        flex: 1;
-        background-color: #0009;
-        opacity: 0.8;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(15px);
-    }
 }
