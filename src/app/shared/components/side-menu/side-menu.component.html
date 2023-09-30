@@ -1,7 +1,8 @@
-<div class="wrapper"
-[ngClass]="{
-'mobile': isMobileViewAndOpenedSidePanel$ | async
-}"
+<div
+    class="wrapper"
+    [ngClass]="{
+        mobile: isMobileViewAndOpenedSidePanel$ | async
+    }"
 >
     <app-side-menu-main></app-side-menu-main>
     <div
@@ -10,5 +11,3 @@
         class="blurred"
     ></div>
 </div>
-
-
