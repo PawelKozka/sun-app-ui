@@ -1,0 +1,14 @@
+<app-side-menu *ngIf="isSidePanelOpen | async"></app-side-menu>
+<ng-container [ngSwitch]="screenResolutionType$ | async">
+    <!-- Desktop -->
+
+    <ng-container *ngSwitchCase="ScreenResolution.DESKTOP">
+        Desktop
+    </ng-container>
+
+    <ng-container *ngSwitchCase="ScreenResolution.MOBILE">
+        Mobile
+    </ng-container>
+
+    <!-- Mobile -->
+</ng-container>
